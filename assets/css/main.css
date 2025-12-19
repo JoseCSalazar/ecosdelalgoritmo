@@ -184,10 +184,26 @@ input, select, textarea {
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
+			
 		}
-
+@-webkit-keyframes glow {
+  from {
+    text-shadow:rgba(196, 202, 180, 0.7) 0px 0px 12px;
+  }
+  
+  to {
+    text-shadow: rgba(255,0,204,0.7) 0px 0px 12px;
+  }
+}
 	h1 {
 		font-size: 2.75em;
+		font-size: 50px;
+		color: #fff;
+		text-align: center;
+		-webkit-animation: glow 1s ease-in-out infinite alternate;
+		-moz-animation: glow 1s ease-in-out infinite alternate;
+		animation: glow 1s ease-in-out infinite alternate;
+		
 	}
 
 		h1.major {
@@ -3276,6 +3292,11 @@ input, select, textarea {
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
+			/* Centrar horizontalmente el contenido .inner cuando es fullscreen */
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
 			min-height: 100vh;
 		}
 
@@ -3403,6 +3424,18 @@ input, select, textarea {
 					vertical-align: middle;
 				}
 
+/* If the header contains the image carousel, remove the solid background
+   so the carousel images are not shown inside a colored box. */
+#header > #image-carousel {
+	background: transparent;
+	padding: 0;
+}
+
+#header > #image-carousel .inner {
+	padding: 0;
+	background: transparent;
+}
+
 					#header > nav > ul > li:first-child {
 						margin-left: 0;
 					}
@@ -3519,6 +3552,29 @@ input, select, textarea {
 	#header + #wrapper + #footer > .inner {
 		margin: 0 auto;
 	}
+
+/* Compact footer: reduce vertical space */
+#footer {
+	padding: 0;
+}
+
+#footer > .inner {
+	padding: 0.5rem 1rem; /* reduce top/bottom padding */
+}
+
+#footer > .inner .menu {
+	margin: 0;
+}
+
+#footer > .inner .menu li {
+	display: inline-block;
+	margin: 0 0.5rem;
+	padding: 0;
+}
+
+@media screen and (max-width: 736px) {
+	#footer > .inner { padding: 0.6rem 0.5rem; }
+}
 
 /* Sidebar */
 
@@ -3880,6 +3936,26 @@ input, select, textarea {
 		background-size: 100% 100%;
 	}
 
+	/* Reducir espacio superior dentro de #intro cuando está en fullscreen */
+	#intro > .inner {
+		padding: 0.75rem 2rem 0.2rem 2rem; /* reducido ligeramente */
+
+	}
+
+	#intro > .inner h1 {
+		margin-bottom: 0.4rem; /* menos espacio bajo el título */
+	}
+
+	/* Para la sección intro en fullscreen, alinear al inicio (extremo superior)
+	   y reducir la altura mínima para que el siguiente bloque (carrusel) quede más cerca. */
+	#intro.wrapper.fullscreen {
+		-moz-justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+		-ms-justify-content: flex-start;
+		justify-content: flex-start;
+		min-height: auto; /* evita ocupar toda la altura de la ventana */
+	}
+
 		#intro p {
 			font-size: 1.25em;
 		}
@@ -3907,3 +3983,50 @@ input, select, textarea {
 			}
 
 		}
+
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 24
+}
+/* asegurarse de que Material Symbols se renderiza como icono */
+		.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; font-size:22px; vertical-align:middle; }
+		/* botón de audio en esquina superior derecha */
+		#audio-toggle.fixed-topright{
+			position:fixed;
+			top:20px;
+			right:10px;
+			z-index:1100;
+			padding:8px 10px;
+			display:flex;
+			align-items:center;
+			gap:6px;
+			cursor:pointer;
+		}
+		@media (max-width:480px){
+			#audio-toggle.fixed-topright{ top:10px; right:10px; padding:6px 8px; }
+		}
+
+/* Carousel styles */
+#image-carousel .carousel-viewport{ overflow:visible; max-width:100%; padding:18px 0; }
+#image-carousel .carousel-slides{ display:flex; gap:10px; transition:transform 300ms ease; align-items:center; will-change:transform; padding:0 20px; }
+#image-carousel .carousel-slides > img{ max-width:100%; width:100%; height:auto; display:block; flex:0 0 60%; margin:0; -webkit-box-shadow:0px 0px 2px 2px rgba(158,45,196,0.9); -moz-box-shadow:0px 0px 10px 4px rgba(158,45,196,0.9); box-shadow:0px 0px 3px 2px rgba(158,45,196,0.9); filter: drop-shadow(0 0 5px rgba(158,45,196,0.9)); border-radius:6px; }
+#image-carousel .carousel-controls{ display:flex; justify-content:center; gap:10px; margin-top:1rem; }
+#image-carousel .carousel-controls .button{ min-width:46px; height:40px; padding:0 10px; display:inline-flex; align-items:center; justify-content:center; }
+
+@media screen and (min-width: 980px){
+    #image-carousel .carousel-slides > img{ flex:0 0 60%; }
+}
+
+@media screen and (max-width: 979px){
+    #image-carousel .carousel-slides > img{ flex:0 0 80%; }
+}

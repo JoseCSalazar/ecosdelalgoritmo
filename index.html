@@ -11,11 +11,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+		<!-- Material Symbols (enlace canónico para mostrar icons por texto) -->
+		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
 	</head>
 	<body class="is-preload">
 
 		<!-- Sidebar -->
-			<section id="sidebar">
+			<!-- <section id="sidebar">
 				<div class="inner">
 					<nav>
 						<ul>
@@ -26,7 +32,7 @@
 						</ul>
 					</nav>
 				</div>
-			</section>
+			</section> -->
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -34,159 +40,57 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
+								<h1 class="orbitron" style="color:#00c3ff;">Ecos del algoritmo</h1>
+								<!-- Botón de audio (esquina superior derecha) -->
+								<button id="audio-toggle" class="button fixed-topright" aria-pressed="false" aria-label="Silenciar audio" data-audio-src="assets/audio/Hypervirtua_-_Esgi.mp3">
+									<span id="audio-icon" class="material-symbols-outlined" aria-hidden="true">volume_up</span>
+								</button>
+
 						</div>
 					</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
+				<!-- Image Carousel -->
+				<header id="header">
+				<section id="image-carousel" class="wrapper style2 fade-up">
+					<div class="inner">
+						<div class="carousel-viewport">
+							<div class="carousel-slides">
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_01.png" alt="Slide 1" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_02.png" alt="Slide 2" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_03.png" alt="Slide 3" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_04.png" alt="Slide 4" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_05.png" alt="Slide 5" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_06.png" alt="Slide 6" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_07.png" alt="Slide 7" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_08.png" alt="Slide 8" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_09.png" alt="Slide 9" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_10.png" alt="Slide 10" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_11.png" alt="Slide 11" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_12.png" alt="Slide 12" />
+								<img src="images/Pages/Proyecto Comic IA - Ecos del algortirmo_13.png" alt="Slide 13" />
 							</div>
 						</div>
-					</section>
+						<div class="carousel-controls">
+							<button id="carousel-prev" class="button" aria-label="Anterior">
+								<span class="material-symbols-outlined" aria-hidden="true">chevron_left</span>
+							</button>
+							<button id="carousel-home" class="button" aria-label="Inicio">
+								<span class="material-symbols-outlined" aria-hidden="true">home</span>
+							</button>
+							<button id="carousel-next" class="button" aria-label="Siguiente">
+								<span class="material-symbols-outlined" aria-hidden="true">chevron_right</span>
+							</button>
+						</div>
+					</div>
+				</section>
+			</header>
 
-			</div>
+					
+					
 
+				</div>
+
+				
 		<!-- Footer -->
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
@@ -204,6 +108,107 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			// Botón que silencia/desilencia el audio sin parar la reproducción (versión robusta)
+			(function(){
+				var btn = document.getElementById('audio-toggle');
+				var icon = document.getElementById('audio-icon');
+				if(!btn || !icon) return;
+				var src = btn.dataset.audioSrc;
+				function ensureAudio(){
+					var a = document.getElementById('page-audio');
+					if(!a && src){
+						a = document.createElement('audio');
+						a.id = 'page-audio';
+						a.src = src;
+						a.preload = 'auto';
+						// establecer volumen por defecto al 50%
+						a.volume = 0.5;
+						a.loop = true;
+						a.style.display = 'none';
+						document.body.appendChild(a);
+					}
+					// si ya existe, asegurarnos del volumen
+					if(a) a.volume = 0.5;
+					return a;
+				}
+				function updateIcon(muted){
+					// try both methods to ensure rendering
+					icon.textContent = muted ? 'volume_off' : 'volume_up';
+					icon.innerText = icon.textContent;
+					icon.classList.add('material-symbols-outlined');
+					btn.setAttribute('aria-pressed', muted ? 'true' : 'false');
+					btn.setAttribute('aria-label', muted ? 'Activar audio' : 'Silenciar audio');
+				}
+				// estado inicial
+				var audio = ensureAudio();
+				var hasAudio = !!audio;
+				// intentar autoplay audible; si se bloquea, reproducir silenciado
+				if(hasAudio){
+					audio.muted = false;
+					// asegurar volumen al 50% antes de intentar reproducir
+					audio.volume = 0.5;
+					audio.play().then(function(){
+						updateIcon(false);
+					}).catch(function(){
+						// autoplay bloqueado: reproducir en silencio
+						audio.muted = true;
+						audio.volume = 0.5;
+						audio.play().catch(function(){});
+						updateIcon(true);
+					});
+				}
+				var mutedState = hasAudio ? !!audio.muted : (btn.dataset.muted === 'true');
+				updateIcon(mutedState);
+				btn.addEventListener('click', function(e){
+					e.preventDefault();
+					audio = ensureAudio();
+					hasAudio = !!audio;
+					if(hasAudio){
+						// toggle mute
+						audio.muted = !audio.muted;
+						updateIcon(audio.muted);
+					}else{
+						mutedState = !mutedState;
+						btn.dataset.muted = mutedState ? 'true' : 'false';
+						updateIcon(mutedState);
+					}
+				});
+			})();
+			</script>
+			<script>
+			// Simple carousel: prev / next / home
+			(function(){
+				var carousel = document.getElementById('image-carousel');
+				if(!carousel) return;
+				var slidesContainer = carousel.querySelector('.carousel-slides');
+				var slides = Array.prototype.slice.call(slidesContainer.querySelectorAll('img'));
+				var prev = document.getElementById('carousel-prev');
+				var next = document.getElementById('carousel-next');
+				var home = document.getElementById('carousel-home');
+				var index = 0;
+				function show(i){
+					index = (i + slides.length) % slides.length;
+					var viewport = carousel.querySelector('.carousel-viewport');
+					var viewportWidth = viewport.getBoundingClientRect().width;
+					var slide = slides[index];
+					var slideWidth = slide.getBoundingClientRect().width;
+					// offset of the slide within the slidesContainer
+					var slideLeft = slide.offsetLeft;
+					// desired left position so the slide is centered in the viewport
+					var desiredLeft = (viewportWidth - slideWidth) / 2;
+					var translateX = desiredLeft - slideLeft;
+					slidesContainer.style.transform = 'translateX(' + translateX + 'px)';
+					// aria/current
+					slides.forEach(function(s,idx){ s.setAttribute('aria-hidden', idx===index ? 'false' : 'true'); });
+				}
+				prev.addEventListener('click', function(){ show(index-1); });
+				next.addEventListener('click', function(){ show(index+1); });
+				home.addEventListener('click', function(){ show(0); });
+				// initial
+				window.addEventListener('load', function(){ show(0); });
+			})();
+			</script>
 
 	</body>
 </html>

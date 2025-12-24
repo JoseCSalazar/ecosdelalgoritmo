@@ -23,10 +23,52 @@
 		if (browser.name == 'ie')
 			$body.addClass('is-ie');
 
+	// Audio management.
+		var audio = null;
+		var isAudioPlaying = false;
+
+		// Initialize audio element
+		function initializeAudio() {
+			var audioSrc = $('#audio-toggle').data('audio-src');
+			if (audioSrc && !audio) {
+				audio = new Audio(audioSrc);
+				audio.loop = true;
+				audio.volume = 0.3;
+			}
+		}
+
+		// Toggle audio
+		$('#audio-toggle').on('click', function() {
+			initializeAudio();
+			if (audio) {
+				if (isAudioPlaying) {
+					audio.pause();
+					$(this).attr('aria-pressed', 'false');
+					$('#audio-icon').text('volume_off');
+					isAudioPlaying = false;
+				} else {
+					audio.play();
+					$(this).attr('aria-pressed', 'true');
+					$('#audio-icon').text('volume_up');
+					isAudioPlaying = true;
+				}
+			}
+		});
+
 	// Play initial animations on page load.
 		$window.on('load', function() {
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
+				// Auto-play audio on page load
+				initializeAudio();
+				if (audio) {
+					audio.play().catch(function() {
+						// Auto-play was blocked, user can click button to play
+					});
+					$('#audio-toggle').attr('aria-pressed', 'true');
+					$('#audio-icon').text('volume_up');
+					isAudioPlaying = true;
+				}
 			}, 100);
 		});
 

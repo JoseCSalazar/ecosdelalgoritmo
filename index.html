@@ -38,11 +38,11 @@
 			<div id="wrapper">
 
 				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+					<section id="intro" class="wrapper style1 fullscreen fade-up" style="background-image: url('images/CityNight.png'); background-size: cover; background-position: center; background-attachment: fixed;">
 						<div class="inner">
 								<h1 class="orbitron" style="color:#00c3ff;">Ecos del algoritmo</h1>
 								<!-- Botón de audio (esquina superior derecha) -->
-								<button id="audio-toggle" class="button fixed-topright" aria-pressed="false" aria-label="Silenciar audio" data-audio-src="assets/audio/Hypervirtua_-_Esgi.mp3">
+								<!--<button id="audio-toggle" class="button fixed-topright" aria-pressed="false" aria-label="Silenciar audio" data-audio-src="assets/audio/Hypervirtua_-_Esgi.mp3">
 									<span id="audio-icon" class="material-symbols-outlined" aria-hidden="true">volume_up</span>
 								</button>
 
@@ -51,7 +51,7 @@
 
 				<!-- Image Carousel -->
 				<header id="header">
-				<section id="image-carousel" class="wrapper style2 fade-up">
+				<section id="image-carousel" class="wrapper fade-up">
 					<div class="inner">
 						<div class="carousel-viewport">
 							<div class="carousel-slides">
@@ -95,7 +95,11 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Created by Jose C Salazar &amp; Copilot</li>
+						<li>&copy; Untitled. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>Musica: Hypervirtua Instrumental Avenue. Composed, performed and produced by ESGI. https://www.jamendo.com/track/904587/hypervirtua</li>
+					</ul>
 					</ul>
 				</div>
 			</footer>
@@ -134,7 +138,7 @@
 				}
 				function updateIcon(muted){
 					// try both methods to ensure rendering
-					icon.textContent = muted ? 'volume_off' : 'volume_up';
+					icon.textContent = muted ? 'volume_up' : 'volume_off';
 					icon.innerText = icon.textContent;
 					icon.classList.add('material-symbols-outlined');
 					btn.setAttribute('aria-pressed', muted ? 'true' : 'false');

@@ -213,10 +213,10 @@ input, select, textarea {
 		}
 
 			h1.major:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, transparent, #b74e91);
+				background-image: -webkit-linear-gradient(to right, transparent, #b74e91);
+				background-image: -ms-linear-gradient(to right, transparent, #b74e91);
+				background-image: linear-gradient(to right, transparent, #b74e91);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -2552,7 +2552,7 @@ input, select, textarea {
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
+					color: transparent;
 				}
 
 				.wrapper.style1-alt .icon.major:before {
@@ -3256,7 +3256,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #5e42a6;
+			background-color: transparent;
 		}
 
 		.wrapper.style1-alt {
@@ -3391,7 +3391,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #5e42a6;
+		background-color: transparent;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3821,10 +3821,10 @@ input, select, textarea {
 			}
 
 			#sidebar nav a:after {
-				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: -moz-linear-gradient(to right, transparent, #b74e91);
+				background-image: -webkit-linear-gradient(to right, transparent, #b74e91);
+				background-image: -ms-linear-gradient(to right, transparent, #b74e91);
+				background-image: linear-gradient(to right, transparent, #b74e91);
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -4017,14 +4017,14 @@ input, select, textarea {
 		}
 
 /* Carousel styles */
-#image-carousel .carousel-viewport{ overflow:visible; max-width:100%; padding:18px 0; }
+#image-carousel .carousel-viewport{ overflow:hidden; max-width:100%; padding:18px 0; }
 #image-carousel .carousel-slides{ display:flex; gap:10px; transition:transform 300ms ease; align-items:center; will-change:transform; padding:0 20px; }
-#image-carousel .carousel-slides > img{ max-width:100%; width:100%; height:auto; display:block; flex:0 0 60%; margin:0; -webkit-box-shadow:0px 0px 2px 2px rgba(158,45,196,0.9); -moz-box-shadow:0px 0px 10px 4px rgba(158,45,196,0.9); box-shadow:0px 0px 3px 2px rgba(158,45,196,0.9); filter: drop-shadow(0 0 5px rgba(158,45,196,0.9)); border-radius:6px; }
+#image-carousel .carousel-slides > img{ max-width:100%; width:100%; height:auto; display:block; flex:0 0 65%; margin:0; -webkit-box-shadow:0px 0px 2px 2px rgba(158,45,196,0.9); -moz-box-shadow:0px 0px 10px 4px rgba(158,45,196,0.9); box-shadow:0px 0px 3px 2px rgba(158,45,196,0.9); filter: drop-shadow(0 0 5px rgba(158,45,196,0.9)); border-radius:6px; }
 #image-carousel .carousel-controls{ display:flex; justify-content:center; gap:10px; margin-top:1rem; }
 #image-carousel .carousel-controls .button{ min-width:46px; height:40px; padding:0 10px; display:inline-flex; align-items:center; justify-content:center; }
 
 @media screen and (min-width: 980px){
-    #image-carousel .carousel-slides > img{ flex:0 0 60%; }
+    #image-carousel .carousel-slides > img{ flex:0 0 65%; }
 }
 
 @media screen and (max-width: 979px){

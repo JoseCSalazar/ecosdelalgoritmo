@@ -134,75 +134,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-			// Botón que silencia/desilencia el audio sin parar la reproducción (versión robusta)
-			(function(){
-				var btn = document.getElementById('audio-toggle');
-				var icon = document.getElementById('audio-icon');
-				if(!btn || !icon) return;
-				var src = btn.dataset.audioSrc;
-				function ensureAudio(){
-					var a = document.getElementById('page-audio');
-					if(!a && src){
-						a = document.createElement('audio');
-						a.id = 'page-audio';
-						a.src = src;
-						a.preload = 'auto';
-						// establecer volumen por defecto al 50%
-						a.volume = 0.5;
-						a.loop = true;
-						a.style.display = 'none';
-						document.body.appendChild(a);
-					}
-					// si ya existe, asegurarnos del volumen
-					if(a) a.volume = 0.5;
-					return a;
-				}
-				function updateIcon(muted){
-					// try both methods to ensure rendering
-					icon.textContent = muted ? 'volume_off' : 'volume_up';
-					icon.innerText = icon.textContent;
-					icon.classList.add('material-symbols-outlined');
-					btn.setAttribute('aria-pressed', muted ? 'false' : 'true');
-					btn.setAttribute('aria-label', muted ? 'Activar audio' : 'Silenciar audio');
-				}
-				// estado inicial: mantener el audio en silencio hasta que el usuario pulse "Comenzar"
-				var audio = ensureAudio();
-				var hasAudio = !!audio;
-				// iniciar en mute para evitar reproducción inesperada
-				if(hasAudio){
-					audio.muted = true;
-					// asegurar volumen al 50% antes de intentar reproducir
-					audio.volume = 0.5;
-					// intentar reproducir en silencio para cumplir políticas de autoplay
-					audio.play().then(function(){
-						updateIcon(true);
-					}).catch(function(){
-						// si falla, seguir en silencio
-						audio.muted = true;
-						audio.volume = 0.5;
-						audio.play().catch(function(){});
-						updateIcon(true);
-					});
-				}
-				var mutedState = hasAudio ? !!audio.muted : (btn.dataset.muted === 'true');
-				updateIcon(mutedState);
-				btn.addEventListener('click', function(e){
-					e.preventDefault();
-					audio = ensureAudio();
-					hasAudio = !!audio;
-					if(hasAudio){
-						// toggle mute
-						audio.muted = !audio.muted;
-						updateIcon(audio.muted);
-					}else{
-						mutedState = !mutedState;
-						btn.dataset.muted = mutedState ? 'true' : 'false';
-						updateIcon(mutedState);
-					}
-				});
-			})();
-			</script>
+			   <!-- Control de audio centralizado en main.js y modal -->
 			<script>
 			// Simple carousel: prev / next / home
 			(function(){

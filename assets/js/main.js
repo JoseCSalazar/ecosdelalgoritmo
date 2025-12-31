@@ -56,21 +56,22 @@
 		});
 
 	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-				// Auto-play audio on page load
-				initializeAudio();
-				if (audio) {
-					audio.play().catch(function() {
-						// Auto-play was blocked, user can click button to play
-					});
-					$('#audio-toggle').attr('aria-pressed', 'true');
-					$('#audio-icon').text('volume_up');
-					isAudioPlaying = true;
-				}
-			}, 100);
-		});
+		   $window.on('load', function() {
+			   window.setTimeout(function() {
+				   $body.removeClass('is-preload');
+				   // Inicializar audio pero mantenerlo silenciado
+				   initializeAudio();
+				   if (audio) {
+					   audio.muted = true;
+					   audio.play().catch(function() {
+						   // Auto-play was blocked, user can click button to play
+					   });
+					   $('#audio-toggle').attr('aria-pressed', 'false');
+					   $('#audio-icon').text('volume_off');
+					   isAudioPlaying = false;
+				   }
+			   }, 100);
+		   });
 
 	// Forms.
 
@@ -240,31 +241,28 @@
 
 		// Function to unmute and play background audio
 		function unmuteBackgroundAudio() {
-			(function(){
-				var pageAudio = document.getElementById('page-audio');
-				var audioToggleBtn = document.getElementById('audio-toggle');
-				var audioIcon = document.getElementById('audio-icon');
-				var src = audioToggleBtn ? audioToggleBtn.dataset.audioSrc : null;
-				if(!pageAudio && src){
-					pageAudio = document.createElement('audio');
-					pageAudio.id = 'page-audio';
-					pageAudio.src = src;
-					pageAudio.preload = 'auto';
-					pageAudio.loop = true;
-					pageAudio.volume = 0.5;
-					pageAudio.style.display = 'none';
-					document.body.appendChild(pageAudio);
-				}
-				if(pageAudio){
-					pageAudio.muted = false;
-					pageAudio.play().catch(function(){});
-					if(audioToggleBtn && audioIcon){
-						audioToggleBtn.setAttribute('aria-pressed', 'false');
-						audioIcon.textContent = 'volume_up';
-						audioIcon.innerText = audioIcon.textContent;
-					}
-				}
-			})();
+		   // Desmutear y reproducir el audio de fondo principal
+		   if (audio) {
+			   audio.muted = false;
+			   audio.play().catch(function(){});
+			   $('#audio-toggle').attr('aria-pressed', 'true');
+			   $('#audio-icon').text('volume_up');
+			   isAudioPlaying = true;
+		   } else {
+			   // fallback para el caso de audio externo
+			   var pageAudio = document.getElementById('page-audio');
+			   if (pageAudio) {
+				   pageAudio.muted = false;
+				   pageAudio.play().catch(function(){});
+				   var audioToggleBtn = document.getElementById('audio-toggle');
+				   var audioIcon = document.getElementById('audio-icon');
+				   if(audioToggleBtn && audioIcon){
+					   audioToggleBtn.setAttribute('aria-pressed', 'true');
+					   audioIcon.textContent = 'volume_up';
+					   audioIcon.innerText = audioIcon.textContent;
+				   }
+			   }
+		   }
 		}
 
 		// Show modal on page load
